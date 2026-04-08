@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FiturController;
-
-Route::resource('fitur', FiturController::class);
+use App\Http\Controllers\StadiumController;
+use App\Http\Controllers\ReservationController;
 
 Route::get('/', function () {
     return view('home');
@@ -19,4 +19,12 @@ Route::get('/contact', function () {
 
 Route::get('/fitur', function () {
     return view('fitur');
+});
+
+Route::get('/admin', [StadiumController::class, 'index'])->name('admin');
+
+Route::prefix('admin')->group(function () {
+    Route::resource('stadiums', StadiumController::class);
+    Route::resource('reservations', ReservationController::class);
+    Route::resource('fitur', FiturController::class);
 });

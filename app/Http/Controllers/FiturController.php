@@ -9,13 +9,13 @@ class FiturController extends Controller
 {
     public function index()
     {
-        $fitur = Fitur::latest()->get();
-        return view('fitur.index', compact('fitur'));
+        $fiturs = Fitur::latest()->get();
+        return view('fitur_index', compact('fiturs'));
     }
 
     public function create()
     {
-        return view('fitur.create');
+        return view('fitur_create');
     }
 
     public function store(Request $request)
@@ -32,7 +32,7 @@ class FiturController extends Controller
 
     public function edit(Fitur $fitur)
     {
-        return view('fitur.edit', compact('fitur'));
+        return view('fitur_edit', compact('fitur'));
     }
 
     public function update(Request $request, Fitur $fitur)
