@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FiturController;
+use App\Http\Controllers\Api\FiturController;
 use App\Http\Controllers\StadiumController;
 use App\Http\Controllers\ReservationController;
 
